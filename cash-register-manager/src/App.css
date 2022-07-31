@@ -1,11 +1,10 @@
 .App {
   text-align: center;
-  height: 100vh;
   background-color: #282c34;
 }
 
 .App-logo {
-  height: 20vmin;
+  height: 10vmin;
   pointer-events: none;
 }
 
@@ -21,7 +20,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(7px + 2vmin);
   color: white;
 }
 
@@ -51,11 +50,109 @@
   justify-content: center;
   padding-top: 2rem;
   background-color: #282c34;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .main__div {
   background-color: #444b5a;
-  padding: 2rem;
+  padding: 1rem;
   width: 50%;
   border-radius: 2rem;
+  color: white;
+  z-index: 1;
+  position: relative;
+}
+.main__div::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+  box-shadow: 0.1rem 0.1rem 2rem #61dafb;
+}
+
+.check__button {
+  color: #61dafb;
+  background-color: black;
+  font-size: 0.9rem;
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  border: solid 0.2rem black;
+  transition: all 100ms ease-in-out;
+}
+.check__button:hover {
+  box-shadow: #61dafb 0.1rem 0.1rem 1.1rem;
+  text-shadow: #61dafb 0.1rem 0.1rem 1rem;
+  border: solid 0.2rem white;
+}
+
+.bill-amt,
+.cash-given {
+  border: solid 0.1rem white;
+  background-color: black;
+  color: #61dafb;
+  text-align: center;
+  padding: 0.2rem;
+  font-size: 1rem;
+}
+
+.output__div {
+  background-color: #444b5a;
+  padding: 1rem;
+  width: 50%;
+  border-radius: 2rem;
+  color: white;
+  z-index: 1;
+  position: relative;
+}
+
+.output__div::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+  box-shadow: 0.1rem 0.1rem 2rem #61dafb;
+}
+
+.return__heading {
+  font-size: 2rem;
+}
+.notes {
+  display: grid;
+  place-content: center;
+  width: 100%;
+  position: relative;
+}
+
+.return__table {
+  width: 100%;
+  position: relative;
+  font-size: 1.1rem;
+}
+
+table,
+th,
+td {
+  border: solid white 0.2rem;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  min-width: 5rem;
+}
+table {
+  background-color: black;
+}
+
+.table__value {
+  color: #61dafb;
 }

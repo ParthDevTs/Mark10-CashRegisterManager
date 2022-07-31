@@ -1,17 +1,53 @@
 import "./App.css";
 import logo from "./logo.svg";
 import { useState } from "react";
+const availableNotes = ["2000", "500", "100", "20", "10", "1"];
 
 function App() {
+  var notes = {
+    2000: 0,
+    500: 0,
+    100: 0,
+    20: 0,
+    10: 0,
+    1: 0,
+  };
+
   var [cashPaid, setCashPaid] = useState(0);
   var [billAmount, setBillAmount] = useState(0);
   var [outputStatement, setOutputStatement] = useState("");
+  var [numberOfNotes, setNumberOfNotes] = useState(notes);
 
   function checkChange() {
-    var cashremaining = cashPaid - billAmount;
-    if (cashremaining < 0) {
-      setOutputStatement("You can wash Dishes to pay the rest");
+    if (billAmount <= 0) {
+      setOutputStatement("Invalid Bill Amount");
+      setNumberOfNotes(notes);
+    } else {
+      var cashremaining = cashPaid - billAmount;
+      if (cashremaining < 0) {
+        setOutputStatement("You can wash Dishes to pay the rest");
+      } else {
+        setOutputStatement("");
+        calculateReturn(cashremaining);
+      }
     }
+  }
+
+  function calculateReturn(cash) {
+    var note__initial = {
+      2000: 0,
+      500: 0,
+      100: 0,
+      20: 0,
+      10: 0,
+      1: 0,
+    };
+    for (let i = 0; i < availableNotes.length; i++) {
+      const numberOfNote = Math.trunc(cash / availableNotes[i]);
+      cash %= availableNotes[i];
+      note__initial[availableNotes[i]] = numberOfNote;
+    }
+    setNumberOfNotes(note__initial);
   }
 
   function billamount(event) {
@@ -43,8 +79,67 @@ function App() {
           <input type="number" className="cash-given" onChange={cashGiven} />
           <br />
           <br />
-          <button onClick={checkChange}>Check</button>
+          <button className="check__button" onClick={checkChange}>
+            Check
+          </button>
           <p className="output-statement">{outputStatement}</p>
+        </div>
+        <div className="output__div">
+          <h3 className="return__heading">Return Change</h3>
+          <div className="notes">
+            <table className="return__table">
+              <thead>
+                <tr>
+                  <th
+                    className="table__header
+                  "
+                  >
+                    2000
+                  </th>
+                  <th
+                    className="table__header
+                  "
+                  >
+                    500
+                  </th>
+                  <th
+                    className="table__header
+                  "
+                  >
+                    100
+                  </th>
+                  <th
+                    className="table__header
+                  "
+                  >
+                    20
+                  </th>
+                  <th
+                    className="table__header
+                  "
+                  >
+                    10
+                  </th>
+                  <th
+                    className="table__header
+                  "
+                  >
+                    1
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="table__value">{numberOfNotes[2000]}</td>
+                  <td className="table__value">{numberOfNotes[500]}</td>
+                  <td className="table__value">{numberOfNotes[100]}</td>
+                  <td className="table__value">{numberOfNotes[20]}</td>
+                  <td className="table__value">{numberOfNotes[10]}</td>
+                  <td className="table__value">{numberOfNotes[1]}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </main>
     </div>
