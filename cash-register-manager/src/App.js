@@ -1,5 +1,5 @@
 import "./App.css";
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import { useState } from "react";
 const availableNotes = ["2000", "500", "100", "20", "10", "1"];
 
@@ -64,7 +64,8 @@ function App() {
       <header className="App-header">
         <div className="head__div">
           <h1>Cash Register Manager</h1>
-          <img className="App-logo" src={logo} alt="" />
+          {/* <img className="App-logo" src={logo} alt="" /> */}
+          <img className="App-logo" src="/newLogo.svg" alt="" />
         </div>
         <p>
           Enter the bill amount and cash given by the customer and know minimum
