@@ -5,4 +5,4 @@ It calculates the Change that should be given to the Customer by the Shopkeeper.
 This app uses employes UseState for storage of the values input by the User. 
 
 
-#Live Link of the Application: https://cashregistermanagerparth.netlify.app/
+# Live Link of the Application: https://cashregistermanagerparth.netlify.app/
