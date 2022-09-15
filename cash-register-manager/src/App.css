@@ -1,6 +1,8 @@
 .App {
   text-align: center;
   background-color: #282c34;
+  min-height: 100vh;
+  padding-bottom: 5rem;
 }
 
 .App-logo {
@@ -83,12 +85,16 @@
   padding: 0.6rem;
   border-radius: 0.5rem;
   border: solid 0.2rem black;
-  transition: all 100ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  cursor: pointer;
 }
 .check__button:hover {
-  box-shadow: #61dafb 0.1rem 0.1rem 1.1rem;
+  box-shadow: #61dafb 0rem 0rem 2rem;
   text-shadow: #61dafb 0.1rem 0.1rem 1rem;
   border: solid 0.2rem white;
+  background-color: white;
+  color: black;
+  transform: translate(0, -3%);
 }
 
 .bill-amt,

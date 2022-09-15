@@ -17,6 +17,7 @@ function App() {
   var [billAmount, setBillAmount] = useState(0);
   var [outputStatement, setOutputStatement] = useState("");
   var [numberOfNotes, setNumberOfNotes] = useState(notes);
+  const [varDisplay, setvarDisplay] = useState("none");
 
   function checkChange() {
     if (billAmount <= 0) {
@@ -29,6 +30,7 @@ function App() {
       } else {
         setOutputStatement("");
         calculateReturn(cashremaining);
+        setvarDisplay("unset");
       }
     }
   }
@@ -85,7 +87,7 @@ function App() {
           </button>
           <p className="output-statement">{outputStatement}</p>
         </div>
-        <div className="output__div">
+        <div className="output__div" style={{ display: varDisplay }}>
           <h3 className="return__heading">Return Change</h3>
           <div className="notes">
             <table className="return__table">
