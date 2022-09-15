@@ -8,4 +8,4 @@ This app uses employes UseState for storage of the values input by the User.
 <br><br>
 ![output](https://user-images.githubusercontent.com/88901443/190508227-6405a914-6c91-4ea9-83cb-aca222f2a0c1.PNG)
 
-# Live Link of the Application: https://cashregistermanagerparth.netlify.app/
+### Live Link of the Application: https://cashregistermanagerparth.netlify.app/
